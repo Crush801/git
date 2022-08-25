@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function maxProfit(prices) {
+    let maxProfitValue = 0;
+        for (let i = 0; i < prices.length - 1; i++) {
+            for (let j = i + 1; j < prices.length; j++) {
+                let profit = prices[j] - prices[i];
+                if (profit > maxProfitValue) {
+                    maxProfitValue = profit;
+                }
+            }
+        }
+        return maxProfitValue;
+}
+
+        var maxProfit = function(prices) {
+            let maxProfitValue = 0
+            for(let i = 0; i< prices.length;i++) {
+                let arr = [...prices]
+                let maxValue = Math.max(arr.splice(0, i + 1))
+                result = maxValue - prices[i]
+                if(result > maxProfitValue) {
+                    maxProfitValue = result
+                }
+            }     
+            return maxProfitValue 
+};
+
+console.log(maxProfit([7,1,5,3,6,4]))
+    </script>
+</body>
+</html>
