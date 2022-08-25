@@ -1,3 +1,1 @@
-cat
-game
-food
+cat game food dress
